@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T.LEC PRO — Maçonnerie, Électricité, Plomberie, Plâtrerie, Rénovation à Montpellier</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F2A47;
+    --steel:#1E5C8E;
+    --amber:#C97F1F;
+    --paper:#F6F3EE;
+    --paper-2:#FFFFFF;
+    --ink:#1B2530;
+    --line:rgba(15,42,71,0.14);
+    --slate:#5B6470;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1A26; --paper-2:#101E2C; --ink:#E7ECF1; --line:rgba(255,255,255,0.14); --slate:#9AA7B4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1A26; --paper-2:#101E2C; --ink:#E7ECF1; --line:rgba(255,255,255,0.14); --slate:#9AA7B4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Public Sans',system-ui,sans-serif; font-size:16px; line-height:1.55;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  h1,h2,h3{
+    font-family:'Big Shoulders Display',system-ui,sans-serif;
+    font-weight:800; text-transform:uppercase; letter-spacing:0.01em;
+    color:var(--navy); margin:0;
+  }
+  :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) h1, :root:not([data-theme="light"]) h2, :root:not([data-theme="light"]) h3{color:#EAF1F8;} }
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .rule{border:none; border-top:1px solid var(--line); margin:0;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    padding-top:env(safe-area-inset-top,0px);
+  }
+  .headerbar{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 28px;}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand img{width:44px; height:44px; border-radius:8px; display:block;}
+  .brand-text{font-family:'Big Shoulders Display',sans-serif; font-weight:800; font-size:1.25rem; color:var(--navy); letter-spacing:0.02em;}
+  :root[data-theme="dark"] .brand-text{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .brand-text{color:#EAF1F8;} }
+  nav{display:flex; gap:26px; align-items:center;}
+  nav a{text-decoration:none; color:var(--slate); font-weight:600; font-size:0.94rem;}
+  nav a:hover, nav a:focus-visible{color:var(--navy);}
+  .callbtn{
+    background:var(--amber); color:#fff; text-decoration:none; font-weight:700;
+    padding:10px 18px; border:1px solid var(--amber); white-space:nowrap; font-size:0.94rem;
+  }
+  .callbtn:hover, .callbtn:focus-visible{background:#B06F19;}
+  @media (max-width:760px){ nav .navlinks{display:none;} }
+
+  /* Hero */
+  .hero{padding:64px 0 52px; border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:0.85rem; color:var(--steel); font-weight:600; margin-bottom:14px;}
+  .hero h1{font-size:clamp(2.1rem,5.4vw,3.6rem); line-height:1.04; max-width:12ch;}
+  .hero p.lead{max-width:52ch; font-size:1.1rem; color:var(--slate); margin-top:20px;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:30px;}
+  .btn-primary{
+    background:var(--navy); color:#fff; text-decoration:none; font-weight:700;
+    padding:14px 24px; font-size:1rem; border:1px solid var(--navy);
+  }
+  :root[data-theme="dark"] .btn-primary{background:#EAF1F8; color:var(--navy); border-color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn-primary{background:#EAF1F8; color:var(--navy); border-color:#EAF1F8;} }
+  .btn-primary:hover{opacity:0.88;}
+  .phoneline{font-weight:700; font-size:1.15rem; color:var(--navy); text-decoration:none;}
+  :root[data-theme="dark"] .phoneline{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .phoneline{color:#EAF1F8;} }
+  .hero-tags{margin-top:26px; display:flex; gap:10px; flex-wrap:wrap;}
+  .tag{border:1px solid var(--line); padding:6px 12px; font-size:0.82rem; color:var(--slate); font-weight:600;}
+
+  /* Intro */
+  .intro{padding:52px 0;}
+  .intro p{max-width:68ch; font-size:1.06rem; color:var(--ink);}
+
+  /* Services - spec sheet rows */
+  .section{padding:52px 0; border-top:1px solid var(--line);}
+  .section h2{font-size:clamp(1.6rem,3.4vw,2.2rem); margin-bottom:8px;}
+  .section .sub{color:var(--slate); max-width:60ch; margin-bottom:34px;}
+  .spec-row{
+    display:grid; grid-template-columns:200px 1fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .spec-row:last-child{border-bottom:1px solid var(--line);}
+  .spec-label{font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:1.5rem; color:var(--navy); text-transform:uppercase; line-height:1.1;}
+  :root[data-theme="dark"] .spec-label{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .spec-label{color:#EAF1F8;} }
+  .spec-num{color:var(--amber); font-weight:700; font-size:0.85rem; display:block; margin-bottom:4px;}
+  .spec-desc{color:var(--slate); max-width:56ch;}
+  @media (max-width:640px){ .spec-row{grid-template-columns:1fr; gap:6px;} }
+
+  /* Why us */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:0;}
+  .why-item{padding:26px 26px 26px 0; border-top:1px solid var(--line);}
+  .why-item:not(:last-child){border-right:1px solid var(--line);}
+  .why-item h3{font-size:1.1rem; margin-bottom:10px; text-transform:none; letter-spacing:0;}
+  .why-item p{color:var(--slate); margin:0; font-size:0.96rem;}
+  @media (max-width:760px){
+    .why-grid{grid-template-columns:1fr;}
+    .why-item{border-right:none !important; padding-right:0;}
+  }
+
+  /* Emergency steps */
+  .steps{counter-reset:step;}
+  .step{display:flex; gap:18px; padding:18px 0; border-top:1px solid var(--line);}
+  .step:last-of-type{border-bottom:1px solid var(--line);}
+  .step-num{
+    counter-increment:step; font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800; font-size:1.4rem; color:var(--amber); min-width:34px;
+  }
+  .step-num::before{content: counter(step, decimal-leading-zero);}
+  .step p{margin:0; padding-top:4px;}
+
+  /* Zone */
+  .zone-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+  .zone-tag{border:1px solid var(--line); padding:9px 14px; font-size:0.92rem; font-weight:600; color:var(--navy);}
+  :root[data-theme="dark"] .zone-tag{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .zone-tag{color:#EAF1F8;} }
+  .zone-tag.main{background:var(--navy); color:#fff; border-color:var(--navy);}
+  :root[data-theme="dark"] .zone-tag.main{background:#EAF1F8; color:var(--navy);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .zone-tag.main{background:#EAF1F8; color:var(--navy);} }
+
+  /* Contact band */
+  .contact-band{background:var(--navy); color:#fff; padding:56px 0; border-top:1px solid var(--line);}
+  :root[data-theme="dark"] .contact-band{background:#0A1622;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .contact-band{background:#0A1622;} }
+  .contact-band h2{color:#fff; margin-bottom:14px;}
+  .contact-band p{color:rgba(255,255,255,0.78); max-width:52ch; margin-bottom:26px;}
+  .contact-band .phoneline{color:#fff; font-size:2rem;}
+  .contact-band .btn-primary{background:var(--amber); border-color:var(--amber); color:#fff; margin-top:22px;}
+
+  footer{padding:36px 0; border-top:1px solid var(--line);}
+  .foot-grid{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:0.86rem; color:var(--slate);}
+  .foot-grid a{text-decoration:none; color:var(--slate);}
+  .foot-grid a:hover{color:var(--navy);}
+
+  :focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto !important;} }
+
+  /* Forms */
+  .forms-grid{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+  .form-col{padding:34px 34px 34px 0; border-top:1px solid var(--line);}
+  .form-col:first-child{padding-right:34px;}
+  .form-col:last-child{padding-left:34px; border-left:1px solid var(--line);}
+  .form-col h3{font-size:1.3rem; text-transform:uppercase; letter-spacing:0.01em; margin-bottom:6px;}
+  .form-col .form-note{color:var(--slate); font-size:0.9rem; margin-bottom:22px;}
+  @media (max-width:760px){
+    .forms-grid{grid-template-columns:1fr;}
+    .form-col:last-child{border-left:none; padding-left:0; border-top:1px solid var(--line); margin-top:10px; padding-top:34px;}
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:0.82rem; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px;}
+  :root[data-theme="dark"] .field label{color:#EAF1F8;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .field label{color:#EAF1F8;} }
+  .field input, .field select, .field textarea{
+    width:100%; border:none; border-bottom:1px solid var(--line); background:transparent;
+    color:var(--ink); font-family:'Public Sans',sans-serif; font-size:0.98rem; padding:9px 2px;
+  }
+  .field textarea{resize:vertical; min-height:70px;}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-bottom:2px solid var(--amber);}
+  .field-row{display:flex; gap:16px;}
+  .field-row .field{flex:1;}
+  .form-submit{
+    background:var(--amber); color:#fff; font-weight:700; border:1px solid var(--amber);
+    padding:12px 22px; font-size:0.96rem; cursor:pointer; font-family:'Public Sans',sans-serif;
+  }
+  .form-submit:hover{background:#B06F19;}
+  .form-status{margin-top:12px; font-size:0.88rem; color:var(--slate); min-height:1.2em;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headerbar">
+    <a class="brand" href="#top">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAEEAQQDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAEGAwUHBAII/8QAUxAAAQMCAgUEDAsEBwYHAAAAAQACAwQFBhESITFBUQcTYdEUFiIyVXFzgZGUstIXIzU2N1JUcnShsRU0QsEkJTNDYoLhRFNWk7PwJ2SDkpXi8f/EABoBAQADAQEBAAAAAAAAAAAAAAACAwQBBQb/xAAvEQACAQIEBAYCAgMBAQAAAAAAAQIDBBESUXEUITEyEzNBUpGxIoEFYSOh8NHh/9oADAMBAAIRAxEAPwDtqIiAIiIAiIgCIoQEoihASiIgCIiAIiIAiIgCIiAIihASoREARSoQBERAEREAREQBEzRASihSgCKEQBSozXglvdphkMc1zoo3ja11QwEfmupN9DjaXU2CLV9sNl8LUHrLOtO2Gy+FqD1lnWu5JaHM8dTZqVq+2Gy+FqD1lnWnbDZfC9B6yzrTJLQZ46m0Ravthsvhag9ZZ1p2w2XwtQess60yS0GeOptEWr7YbL4XoPWWdadsNl8LUHrLOtMktBnjqbRFrO2Ky+FqD1lnWo7YbL4XoPWWdaZJaDPHU2iLV9sNl8LUHrLOtO2Gy+FqD1lnWmSWgzx1NooWs7YrL4WoPWWdadsNl8LUHrLOtMktBnjqbNFrO2Gy+FqD1lnWnbDZfC1B6yzrTJLQZ46mzRazthsvhag9ZZ1p2w2XwtQess60yS0GeOps0Ws7YbL4WoPWWdajthsvhah9ZZ1pkloM8dTaItYMQ2XwtQess617KWspqxmnSVEM7BtdFIHAehccWuqOqSfRmdN6hSuHQiIgBREQBFKhAFDipWpxJO+nslfLGcnsppC0jcdErqWLwON4LEpVZV3XHl8qLXaql1LZKY6M87P73rzyOQ2ZDMrdQcl+G44w2SOpldve6cgnzDIKeSKFkWEI5GgaUs8jnniQdEfkArqtNWrKEnCDwSM1KlGpFTmsWym/Bnhn7LP6w5T8GeGfss/rDutXFFV49X3Ms4el7UU74M8MfZZ/WHdafBnhj7LP6w7rVxRPHq+5jh6XtRTvgzwx9ln9Yd1p8GeGPss/rDutXFE8er7mOHpe1FN+DPDH2Wf1h3WnwZ4Y+yz+sOVyRPHq+5jh6XtRTvgzwx9ln9Yf1p8GeGPss/rDutXFE8er7mOHpe1FN+DPDH2Wf1h3Wp+DPDH2Wf1h/WriiePV9zHD0vaim/Bnhj7LP6w7rU/Bnhj7LP6w7rVxRPHq+5jh6XtRTfgzwx9ln9Yf1qfgzwx9ln9Yd1q4onj1fcxw9L2opvwZ4Y+yz+sO61PwZ4Y+yz+sP61cUTx6vuY4el7UU74M8MfZZ/WH9afBnhj7LP6w/rVxRPHq+5jh6XtRTvgzwx9ln9Yf1rU3fk9famm44Qq6mnrIu6EJfnzg4A8eg5gro6HYuq4qp9cTjt6TXTAquCMSdsNrMk7RHWQO5uojAyGe5wG4HhuIIVk2rnOG/wCicpmIqeHuYngvLRszzaf1cfSuixnMJXioz5dHzO0JOUPy6rkfSIipLiEREBKIiAblocWn+oLj+Fk9krfLQYt+Qbj+Gk9kqUO5EZ9rPFyUfMym8rL7ZVxVO5J/mZTeVl9sq4qdfzZbldv5UdgiIqi4IiIAiLG+ohjdoySxtdwc4AoDIiwtqqdxDWzxEk5AB41rMgC0mMr1+wMNV1xYW89HHlCHbDI7U38z+SrfKBj4Wl5s9iLZ7vKQwuGtsBOoZ8Xa9m7fwVY5Xao2+02TDgmdJIxnZFS9zsy9w1Ak8S4vKup0m2sfUpqVUk8PQ1OCOUK5Wm6PF0mlraKpkL59M5vY47XN93ZwyXdaGsprhSRVVHMyaCVukx7DmCF+WaRupzz4l13kjFRRWe5XOpmkFAHaMcO4vHfOHTrA6VquqMI0vF6GS1rzlU8PqdQRYaSqhrKds9O8PY7fw6D0rMvOTTWKPSaaeDCIi6cCIiAIiIAh2IiA5jaTlyqX7yfuLosPehc6tX0p37yfuLokPehX3Hctl9Ge37Xu/syIiKg0BERASiKEAWhxb8g3H8NJ7JW+3LQ4tP8AUNx/CyeyVKHciM+1ni5KPmZTeVl9sq4qnck/zMpvKy+2VcVOv5styu38qOwREVRcEREAXAeWUA43kzA/dot3jXflwHlk+e8n4aL+a02vmGa68sr2Dg3tts2ofv0O7/EF1HlI5RhbudtNglDqzW2eqbrEPFreLund49nGonyRSskhe5kjXAscw5EHdl0q54VwwWFlVcYi6YkGKAjPI7iRvPQu31ejbrxKn6WrK7OlVrf46f7ehseTDCclZe6e6XLSyiPPsjdtcdznec55KsY+u37axbcKpjtKJsnMxfcZ3I9JBPnXX68yYSwfdLlMQ2rfFoxjPW1x7lo8eZz8y4LTM05RnrA1lc/jnVrLxKvJv00O3yp0cKdPovXU99FTSTyw0tO3SmlcGMaN7ich+a7ZeKVtjsNts1ODzUbe7flqe4bfSSSqdyRWTs29yXOZmcNC3uMxtlds9AzPnC67cIqSemdFWlgid9dwGXSDxXP5fNWg6EHgd/ikqT8aaKHabpPa5+cjOlG7v4ydTuo9KvtBWwV9O2endm07QdrTwKrdNhqhqA+SK6CaNhIcY9EhvQTmdeS1MNwFsuDpLY97oAciJD/aD/vYvm6NStY4Rrdr+T3qkad1zp9ToaLx2y4wXKmE0DtY1OYdrTwK9i9qMlNKUXijzZRcXgwiIpHAiIgCHYiIDmNq+lS++T9xdEh70Lndq+lO++T9xdEh70K+47lsvoz2/a939mRERUGgIoRASiIgG5aDFvyDcfw0nslb5aHFvyFcfw0nslSh3IjPtZ4+Sj5mU3lZfaKuKp3JP8zKbysvtFXFTr+bLcrt/KjsERFUXBEXxNLHBE+WaRscbGlz3vOQaBtJKA+nOaxpc8hrQMySdQC/O3KXc6W+YvmntchqIhGyFr2jU9wzz0eI1+dbnlAx7PiOY2ewc4KBztBzmgh9UeHQ3o379WpfWEsMGjkY58YmuEmpobrEfQP5ldq3ELKOefOT6IrjSldyyR7V1Z58J4YNM+Oeri5ytefi4gM+bP8AN36LpUNNT4ehbPUNbPcpBlFEDqbn/wB7fQhFNhqnzybPcpG+Zg6v1XgsDZbnfWTVLjI5ucr3Ho2fnkvCqVZzrJ1HjUfxH/6evCnCFLCCwgvmRoOW67PbS2uzF4Mrv6TPlq2dy38y70LllM5kbSXOAJK61i7k6veJcTVVyfW0UFO7RZC1xe5wY0ZDUBltzO3etReuS2GyWGsudfenP7HiLxHFTgBztjRmXbyQF9bb1YU4pY8z5u4ozqSbw5FKgvFVTw8xTVlVHEXZmOKRzWknfkCthY7VW4kusVDAXPkec3ySEuEbd7jnw/M6lo7dTyTTsbGxz5HODGMaMy5x1ZBdot9FHgHDw7lr7xW/2j9oZ0Z8Bn5yc1orV/Dhj6szUaHiTy+iNzBUWewwxYfihzo2R6E0gP8AEdpdltJ2k7lqbzZ329wliPO0j9ccg15dB6960UdayV5MmbXE5kk55nxqw2a9CkYaSsbz1E/UWnXoZ8OjoXzl3axuV+XXU+ht67oPl00PBQ1s9BUCemdouG0bnDgVfbRdYLnBpx9zI3v4ydbT1dKqF5s3YjRV0bueopNbXg56GfHo6VrqWpmo52zU7yyRuw8eg9C8ahXq2VTJNcv+5o9GrShcwzR6/wDdTp6LWWW8Q3SHcydo7uPP8xxC2a+gp1I1IqUXijyZQcHll1CIimRCHYiFAcxtX0p37yfuLocPehc8tX0p33yfuLocPehX3Hctl9Ge37Xu/syIiKg0BFCICURM0AK0OLPkG4/hpPZK3pWhxb8g3H8NJ7JUodyIz7WeTko+ZlN5WX2iriqdyT/Mym8rL7ZVxU6/my3K7fyo7BERVFxhrKunoaWWqq5mQwRNLnyPOQaFwblCx7PiaV1FQl8NqY7U06nTkfxO6ODfT0dRxpg+rxW9kcl7fS0UeRFNHThwc76zjpDM8OCqvwLReHpPVB7y00XSj+UnzM1dVZcorkc2sl5FoL3x0UUsztXOvccwOA4LonJzjSWvxDTWz9nU0fZAfpzh7i7JrS4AZ6tyrXKThiiwu600dGXSPfBI6aZ+oyO0hry3AbgsXJMcse23xS/9NylK2oTxr5fy1Ko160GqOPLQv95JN4rMz/fOWyw/Z6yp+PbPLS07tRcw5OkHR0dK9MFldXX+rmqY3ClZKXaxkJNeoDo4q2ABoAaAANQAXzVtY56kqk+mLwPoK11lgoR64IwUtHDStyiDid73uLnHzlc55cLqYrXQ2iJ3d1cpkkGf8DNmf+Yj0Lpy5jJZe3XlCrKyqaXWm1ObTDPZK9utzR0aROfRkN69+3jGMsfRHkXDk44LqxyUYPFNFHfLhH8Y5v8ARGOHetP8Z6Tu6PGumSRskYWSMa5p2tcMwVLWhrQ1oAA1ABaK+X4W+vp4Gd0A7Sny3NO7x7/MFTdXSX+So8EWW9u0skDy3vBtHVsdJbw2ln4AfFu8Y3eZUWWKqtdU6mrInMc090w/qDwXYI3tkY17HBzXDMEbwtRiayR3ihLWgNqowTC/p4HoK71OlWsd7dQ/FvHPUcnfxnXlnvHUs94s7I4hX213O0T9ZA1mP/T9FVqJ7opnQygtOZBadrXDcrBaLtLbJTl3dO7+0iO/pHSs1zbQrxyy6+jLqNaVKWKPFBNJTytlheWSNObXDcrzYb3Hco+bkyZUtGtu53SOpeKowrT1MvP007oI3gOEehmBnw1/kvmPCRikbJHcHte05tcI8iD6V5ttQu7afJYrdG2tVt60ebwZZ0XxA2RkTWzSCR4GReG6OfTkvte0uh5gQoh2LoOY2r6U795P3F0OHvQud2v6U775P3F0OHvQr7juWy+jPb9r3f2ZERFQaCUUa0QAoiIAdi0OLfkG4/hpPZK325aDFvyDcfw0nslSh3IjPtZ5uSj5mU3lZfaKuCp3JR8zKbysvtFXFTr+bLcrt/KjsERFUXBERAcr5VrHXYhxVZaC3Rh0j6eQue7vY26Qzc48Fs7TaLDghoFLEK67BuT6mTa3MawPqjoGviVasR1wt1GZYWA1c3xURDc3ebj4uKrlBhCsrMprlOadrtfNN7p/nOwH0rNdXVdpUKC5+rLre2o4utVexinxbXuccp4ohwYwHL05r6p8V3AOHx0Uo4PYB+mS3IwXadHImpJ485/ovFXYHjLCbfVPa7c2YZg+cbF5sra9X5Zm/wBm5VbR8sP9HvosU0045upaaaQjIP75mf8AJba0UVLb7fFT0WRhaCdIHPTJOZcTvJJJJ6VzSspK60yCOthc0HvSdbXeIr12q81FE/OmlIG+J+tp83Uu0v5GpTeSuv8A05UsYTWakzph2LmRE9bXua4F08spGXTmrbQ4qpJgG1bXQP3nLSb6V9VEOH6yU1L54A863Fs2jpeMZq26ULuMXTmuX94FVByt280XzM+GnHsOaIO0ooZ3xxO4tH+ua2VRMyBgc/YXtYPG4gD9Vpn3qlibHRWaITzHuY2MGTG9JPBYKmsNZeaC0xS886neJ6uUbM26wPTl+S0060YQUIvFrl+9CmVOUpOTWHqVfHVIKO/OkjGTahgl1fW2H9M/OvK12lGHcW5rc8pOXZlDx5t+fpC0dN+7M+6thnOq0v7tF9wfosqxU37tF9wfosqAIiIAhRDsQHMbX9KV+8n7i6FD3oXPLX9Kd+8n7i6FD3o8SvuO5bL6M9v2vd/ZlRQioNBIRQiAlFCICdy0GLfkG4/hpPZK3y0OLPkK4/hpPZKlDuRGfazy8k/zMpvKy+0VcVTuSj5mU3lZfaKuKnX82W5Xb+VHYIiKouCIiArWNb7bsNUjLnWM56qaHMpIM9bnHblw3ZncPGuaYExLdr/yj0c9xq5CJGyjmWOLY2gMcQA3Zl49atHKpfqG019virbBRXMyRPc19SdceThqGo7VTaDlBt9tqm1VBg+109Q0ENkjeQ4Z6jkdFaqVP8G1HmzJVqfmk5ckVeuu90FdU/1nW/2z/wDaX/WPSrbyR3GunxlFHUVtVLG6nlzZJM5wOobiV78J32x4mxJBb6nB9riNSXudK3uiCGl2eWiNuS8cGP6CzXOZ9twjbaeWN74hLG/Rdog5bm78lfJuScFHn+imKUWpuXLE7dUQRVMToqiNkkbtrXjMFVC8YKDiZbTIG7+ZkOrzO61rMF8pM+JL8y2y2yOBr4nv5xkxcRojPYQtM/ljq2lwFlg1E/7S73V51Ww8b8ZR5noU71UvyjIy1UFdbn83VwSRndpt1HxFfMVbE05zRF33ZA3+RXVoHippo5HMGUjA4tOvaM1jNtoS7SNFTaXHmm9S8eX8UscYy+Uemv5DFflEoFFV3OszprJRCBr9T5Y8y4jpkOzzZK44dsUVmp3EuElTLrlk/kOj9VtmtaxoaxoDRsAGQWixXiCO0UpihcHVko+Lb9QfWP8ALittC0VJpt4tf62Rlq3DmsEsEU7G1c2tvsjWHNlO0RA8SNZ/M5eZeeNuhC1vBq11NGZp83ZnI6Tid62Z2HxLUZzqNN+7RfcH6LKsVL+7RfcH6LKugIiIAiIdiA5haz/4p33yfuLoUPehc9tf0p37yfuLoUPehX3Hctl9Ge37Xu/syIoRUGglFCICUUIgG5aHFnyFcfw0nslb47FocWfIVx/DSeyVKHciM+1nm5KPmZTeVl9oq4qnclHzMpvKy+0VcVOv5styu38qOwREVRcEREBzflUsNDd6+gkrb/RWwxxPa1lSNbwXDWNYVG7S7N/xvZ/R/wDZWzltstdVi33KlgkmggY+Obm2lxZmQQSBu1EZrknY9R/uJv8Alu6l6FBNwWEjz67Sm8YnSMIWSxYfxDS3SXGNqmbBp/FsOiXZtI2l3SvLFgCgvVynZbMW22eWR75RExmk7RJz3O3Zqgdjz/7iX/lu6ldOSOGZmM4i6GQDsaXWWEbgpTjKKclLmRhJSag48jd4MtFiwxfmXCfF9qmDI3x82whpzOrbpFaV+D7I4vPbvaMiTkSNx/zKmPp59N2cE3fH+7dx8S+XU8+ifiJdh/u3dSkoNPHN9EXNNYZfs/URrqG2wU8VVWQx/FjQL3AaYAAzC80+J7LA0l1fE7ojzeT6FU8bsc6K0BrHH+i7mn/Cqw2Cd2oQyn/IV5bPTRcbtjouaY7VAWk/30w2eJvX6FT5HTVlQ6SR7pZnnNznHMnxrPHbpna3tc0fdJK9kVOYm5MjcOJ0TmUOnxTxCGPRGsnWTxWQ7D4l9aD/AKj/AP2lZKekqKqVsMML3PdqHcnV41wHS6X92i+4P0WVfETObiYzPPRaAvtdAREQBCiHYgOYWv6U795P3F0GHvQufWz6U795P3F0GHvQr7juWy+ii37Xu/syIiblQXhFCICUREAWhxZ8hXH8NJ7JW+K0GLPkK4/hpPZKlDuRGfazz8k/zMpvKy+0VcVTuSf5mU3lZfaKuKnX82W5Xb+VHYIuR4gfyki+3D9mCu7B7If2PoNiy0M9WWevYqtbsX44udayioLnUz1L89GNrI8zkMztHQpRt3JYpojK4UXg0z9CouWWCrxzTUV9qMQvq444bbK+nfK2PJso1gjLflntWPkkxPe73faunutwkqYmUmm1rmtGTtJoz1AbiVx0Xg3j0JKssUsOp1dQpXFOUXF+IrXjKtobbc5Yadgj0I2sYQCWNJ2jiVCnTdR4IlUqKmsWdqUrimlyr/8An/RArxgSpxBS2i41ONHyxmJ+m18+gNGMNzJ7ndnmpSpZVjimcjVzPDBouaLh975SMQ3+5dh4YjlponOLYmQxh88g4k5HLxDZxXmqLpyi4cYK24S3BkAPdOqA2WPxO25fkpq3l6tJkHcR9E8DvKLRYLvFbfbBBX3GgNHM/Y3dINz2g6wDwP8AqvLykXKstOEK2st07oKmN0YbI0AkZvaDt6CqVF5spc5LLmLMpXA7RiDlCvbJX2msrKpsRAkMbIu5J2bQF6oMf4xw3cm0+II3zjU58FTE1ji3i1zQP5hXO2l0TWJSrmPVp4HckXNOUzFdbS2KyXLD9dJBFWuLtJrWkuboggHMFVS23XlKutG2st09dUU7yQ2RjIsiQcjtHFRjQbjmxwJSrpSy4YndkXF8Ocpl7tt3Zb8Ut52LnBFK58QjlgOzMgZAjXr1bFe8f40hwnRRiKNs9fUZ8zE45NAG1zuj9VyVGako6nY1ouLloW1FwWmvHKJiYOrLdLXuhBIzpmtijHQNmfpK9Fn5RsSYeuXYeJGS1MTCBLFPGGTMHFp1Z+fbxU3by9GsSHER9U8DuSHYsFDVwV9HDV0kgkgmYHxvG8EZhZys5oOYWz6Ur79z3F0CHvVz62fSlffue4ugw96Ffcdy2X0Z7fte7+zIiIqDQETWiAIihAStDiz5CuP4aT2St7uWhxZ8hXH8NJ7JUodyIz7WYOSf5mU3lZfaKuKp3JP8zKbysvtFXFTr+bLcrt/KjsQ4aivz5yVfSDQ/+v7Dl+gzsK4VyZWi50uO6KepttZDC3ns5JKd7WjNjstZGSnRaUJ7EKyeeG517GHzUvP4Gb2CuU8hfzlrfwJ9tq6ziuN82GLtHEx0kj6OVrWMGZcSw5ADeuC4eGLMOVT6q1Wuujmkj5txfQveNHMHYRxAUqKxpyRys8KkWfo9fnnlWz+EGv0e+yhy8fNtW7gxfyiOmjD6Ko0S8B39WEas9e5eHlNtN1qcdV9RR22tmj+KLZI6d7mnJjd4GW1Sow8OfN+hGvPxIcl6mx/afKsD+71fqkPUt9iWe9yckNTJe2yNuLiBUBzA0hnPAbG6u9yVeGNeUPfapP8A4x6t2Cau84qtt4osXUTo4XNbGxrqZ0Ok1wdpZZ7csh4lyaccJNLlodg1LGKb56le5B4qYy3eVwb2W0RtaTtEZzzy84GfiC63JGyWN0cjGvY4ZOa4ZgjgQuC3DC2KsEXc1tpFRLEwnm6qmZphzOD2a8ukEZcErcUY4xPAbbHDUFkncvZS0rmFw/xO3DzgJUpeJLMnyFOr4ccslzO+ADcqfyt/MO4fei/6jVssEUl7orBBBiKoZPVt2Za3MZua538RHH9dq8XKlTT1eCa6Glglnlc6LRjiYXOPxjdwVEFhUW5fN403scs5O8a0uEoK5lVRz1BqXscOaLRo6II15+NeXHGJ5Ma3ajFFQSR800xwxA6ckjnEHd4hqVs5J8JwVNPcu2KyaTmyR8z2ZTkHLI55aQ8S6ZbLFabU4utttpKZx1F0UQafTtWidWEJtpczPCnOdNJvkcm5SbbLaMEYWt9QRz0Gk2TI6g7RzI8xOS+cFco1DhvDsNtmt9VPLG97i+NzQ06Tid56VYeWygrK+htTaGkqKlzJ3lwhic/RGiNuQTAuCrbccFMjvNpbFXSGVhlkh0Jmd0dEgnXq1ZIpQdJZ9Q4zVV5NDnlY+t5QMZPlpKQxvqnsGi3uhFG0AaTj0AZ5+YL28sJlGM5Y3lxZHSxNiz+rkf55r2YZgxDgXFssbrbW1NHp81Uugp3vZLHue3IbRnn6Qrzyk4Kdimmgr7YWtuEDMmh/ciZh16JO4g7M+JBU3UUai0wIKDlTlriW6yw0sFoooqENFK2BnNaOzRyGRXNOXiGn5m0TANFUXyMzG0x5A+gHL0lVm3YhxthKD9mimqGQx6mRVNI54Z91w3echTS4dxbjq7Nq7m2eOM5B1TUx82yNnBjdWfiA8ZUIUsk87fIsnVzwypczpPI++V2BqQS56LZZWx5/V0z/ADzV1OxeO0W6ntFsprfRtLYKeMMZntPSeknX517Css3mk2aYLLFI5fbPpTvv3PcXQYe9XPrb9KV9+57i6BD3oVtx3LZfRTb9r3f2ZUUIqDQEREAREQA7FocV/IVx/DSeyVvty0OK/kK4/hpPZKlDuRGfazByT/Mym8rL7RVxVO5J/mZTeVl9oq4qdfzZbldv5UdjWuvlC0S5yO0oqkUzm6OvTJGWrhrzz6Cjr1RtNUNKQuppGxuaGEl7icgG8deY8YKxvw/RPlfN3YmdIZOcz1g6Yd4toy8RKxdrVIxmcMlQJdDvzKcy7S0w7XmAQ7M6hlrOpVFxmmvtPC0c5BVhwYZJW8yc4mA5aTujUdmewob9Q/GgPe4xSPY8BusFrS7PxEA5FYhYnTQtNZXVJqJIubqXRvAErcydHZqAzOWWRyKwXG1Wemc19ZVCme8yhrnPa3MPaQR4hnq4ID0vxHQCNj4udmEgZo820a9MOI2kfUOfBfTr9Sse5skVQwN1Fzo+50tDT0c89uivKcP22Yzup5naXOMfI1mg8BzWEDuSCNYdn+a8pgsckbKyoreZfUBwD5JGAuGhzZyA7np1bD6EBuaO7wVlU6ngjmOiBpPLQGjuQ7jnsI3LJcrgyhpRLomRz382xrdebjnln6FrbfBaqSvmnguUbntbnKwmM5ANDSSctIAAA7cl8VTLDLbo6eOup6enE5kaWPaQX7T32YPfZnxoDYG8U7aWpmkbKOxWNdK3R1900EZa+lfP7ah+LaKardI8F3Ntj0nNaDlpHI7M/OvBVUdtjZOye7ujjmaIZWaUYDi1gy/h1HLI5DUvZFZowIpIK2eNwaW6cQY3TYTnlkG5bdhAz1lADf4AZGmkrA5kgiLeaGZedYA18Mipbf6J7AYxO95DdGNsfdOLi7UBxGg7PhkvNPDZat1XzldG4CcVE7edA0S0BuR3gatfSsVHR2qWCF9NWvikYwcy8PYHsEekM8th1POefHXrQHulv1PGHZ01WS3QD2iLW0v70EE8dS+6K7NrK+Snjhla2MEOc5uWThtG3pC8hgtbpOZkuenPU8zINKVuk/QOk07N/wD+LLR0tDSVr6+OtaRVB8oB0MnDUSQ7LSyGrfkgPdXV8dHHE4sllMr9BjYW6RJyJ/QFYIr3Qy009Q2RwhgY173Fp2OGYyG3PdlxXiqY7B2LRUj6injpw7n4YxLkJM9L0g6RXzPSWhhcXXFsFNVNEYgbIxrDoDRGjqzGRA2HaEB7Y75SGSKKVs0EskoiEcrNEhxBLc+g5ajx1LDJiWgaC5vPSMaZA5zGZgBhAcdusZncsUlrts5cKutfUSGbm5HSSNBLtAtDNQGRAdmMteetfcuGKOQZNkkYzuxohrCAHaOYGbTl3oyI1oDK+/UrDU/E1BbTu0XODBkXZgZDXntcEdiCjZGXFk4Lc9JhZk4EPDMjr25uCxvw3TPNQHTTc3UHN7Mma9YPfaOl/CN6SYao3QmFskrGZENA0TkDIJN4Oesb89SA21LOKmBkwY9gd/C/LMehZTsWCipxSUzIGuLgwZAlrW/k0AegLOUBy62/Slffue4ugw96ufW36Ur79z3F0GHvVfcdy2X0UW/a939mRM0RUF41IoRASoREAWixX8h3H8NJ7JW93LW3anbU0s0D+8lY5h8RGS7F4NMjJYpo1vJP8zKbysvtFXFc25Lruy3PqcMXFwiqoZnOh0jkH57QOneOIPQukq24TVV/2VWzTpL+giIqS8LWXW1uuFVTSdkPhZE2Rruby0nBwAy1gjctmiA0Bs9bDHW01DNBFTVOQaSHF8Y0Gs1bjqalPYZadjYW1LHQMq46hgMYaW5d83IateQPnK36ICt1OHJ5n1B7LBbKagtY4dzGZBkCMtee0HPjqUvsFbNDE19YInxxysDmOc8nTDRrL89WrZ6FY0QFamw9U85HJTTRM0JC5rA97cgYmMy0mnP+FbvsV7qmCofUStMcZa6Fjvi3k5ayNuYy1L1IgKzNhqokimYawO02ThjXDVGZH6WYy17NRz8y+5sPVFUI3T1AZLDFK2KRj3vc1ziMjm45kZAgjgVY0QFdZYKmOM07Z4Ox5TC+VxjPONcwNHcnPZ3Ayz2ZlJMPTEVTI6prYpXaEY0NcUTnab2jcSTq8WSsSIDSUlllpzSMdUNkjpap8zO4yOi5rho5DUMi4+Zeb9gVccL44Z6Y89C+CXnYydFpe5wLde3u9h1HIKyIgK7Fhp0NWyojqciKpsrwQTzjGtAaD/iBB19JViREAREQBDsReS6XGltVDLWV0zYoIhm5x/QcT0IljyRxtLmznNt+lK+/c9xdBh70LneBRLdL1dcQzMLG1chbE08M8z6Mmj0rocXeq+478NEim37MdW2ZM1KhFQXjNERAEREAXnqGaTSvQvkjNAUjEmF6W6vEzi6GqZ3k8e3VszG/9Vqm0+NKYCKnxCXRt1NLySfzaT+a6HNAH7l5XUQ4K6NecVh1X9lMqEJPN0f9FHyxz4fZ6B7iZY58Ps9A9xXfsIcE7CHBd4iWi+ER4eOr+WUjLHXh9n5e4pyx14fZ6B7iu3YQ4J2F0JxEtF8IcPHV/LKRljnw+z0D3FOWOfD7PQPcV2FEOCdhDgnES0Xwhw8dX8spGWOvD7Py9xMsc+H2ege4rv2EOCGiHBOIlovhDh46v5ZSMsc+H2ege4pyx14fZ6B7iu3YQ4J2EOCcRLRfCHDx1fyyk5Y58Ps9A9xRo468Ps9A9xXfsIcE7CHBOIlovhDh46v5ZSMsdeH2ege4mWOvD7PQPcV37CHBOwhwTiJaL4Q4eOr+WUnRx14fZ6B7ijLHXh9noHuK79hDgnYQ4JxEtF8IcPHV/LKRo46/4gZ6B7iZY68Ps9A9xXfsIcE7CHBOIlovhDh46v5ZSNHHXh9noHuKdHHXh9n5e4rv2EOCjsIcE4iWi+EOHjq/llILcdeH2fl7i+Bhm5XeZkmJLtNVtYcxE1xy/wBPMFeuwhwWWOkAOxOIn6YL9HeGh64v9mC10cdLCyKGNscbBotY0ZABbZgyC+I4w0LIqC8lEUICUUIgJRQiAlFCIBkoyClEBGiOCaIUpvQEaITRClEBGiFOiERARohNEcFKIBohNEIiAaIUaIUogGiFGQ4KUQDRCjRClEBGiE0RwUogGiE0QiICNEcFICIgClQiAlQiIAiIgJUIiABNyIgCIiAIiICFKIgCIiAFERASoREAKIiAIiIAiIgJREQEKN6IgJREQBERAEREAREQH//Z" alt="Logo T.LEC PRO">
+      <span class="brand-text">T.LEC PRO</span>
+    </a>
+    <nav>
+      <div class="navlinks" style="display:flex; gap:26px;">
+        <a href="#metiers">Nos métiers</a>
+        <a href="#zone">Zone d'intervention</a>
+        <a href="#devis">Devis</a>
+        <a href="#sous-traitance">Sous-traitants</a>
+      </div>
+      <a class="callbtn" href="tel:0609697900">06 09 69 79 00</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="eyebrow">Montpellier &amp; agglomération — devis gratuit</div>
+    <h1>Maçonnerie. Électricité.<br>Plomberie. Plâtrerie.<br>Rénovation.</h1>
+    <p class="lead">T.LEC PRO regroupe cinq corps de métier du bâtiment sous un même toit, pour que vos travaux avancent sans que vous ayez à courir après cinq artisans différents.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="tel:0609697900">Demander un devis gratuit</a>
+      <a class="phoneline" href="tel:0609697900">06 09 69 79 00</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Interlocuteur unique</span>
+      <span class="tag">Neuf &amp; rénovation</span>
+      <span class="tag">Montpellier et communes alentours</span>
+    </div>
+  </section>
+
+  <section class="intro wrap">
+    <p>T.LEC PRO est une entreprise générale du bâtiment basée à Montpellier. Nous réalisons des travaux d'électricité en neuf et en rénovation, des travaux de maçonnerie générale, de plomberie, ainsi que des travaux de plâtrerie et de pose de plaques isolantes. Que vous ayez besoin d'une intervention ponctuelle ou d'une rénovation complète coordonnant plusieurs corps de métier, notre équipe reste votre seul interlocuteur du premier échange à la réception du chantier.</p>
+  </section>
+
+  <section class="section" id="metiers">
+    <div class="wrap">
+      <h2>Nos métiers</h2>
+      <p class="sub">Cinq compétences réunies dans une seule entreprise, pour un chantier suivi de bout en bout.</p>
+
+      <div class="spec-row">
+        <div class="spec-label"><span class="spec-num">01</span>Électricité</div>
+        <div class="spec-desc">Installation et rénovation électrique, mise aux normes de tableaux et circuits, câblage neuf, dépannage — pour les bâtiments résidentiels comme pour les locaux professionnels.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label"><span class="spec-num">02</span>Maçonnerie</div>
+        <div class="spec-desc">Gros œuvre, ouvertures de mur, dalles, reprises de fondations et de maçonnerie générale, pour vos constructions neuves comme pour vos travaux de reprise.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label"><span class="spec-num">03</span>Plomberie</div>
+        <div class="spec-desc">Pose et réparation de réseaux d'eau, installation de sanitaires et de chauffe-eau, recherche et réparation de fuites.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label"><span class="spec-num">04</span>Plâtrerie</div>
+        <div class="spec-desc">Cloisons, doublages et pose de plaques isolantes, pour l'isolation thermique et phonique de vos pièces.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-label"><span class="spec-num">05</span>Rénovation</div>
+        <div class="spec-desc">Rénovation partielle ou complète, avec coordination de tous les corps de métier nécessaires — un seul planning, un seul contact.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Pourquoi T.LEC PRO</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Un interlocuteur unique</h3>
+          <p>Un seul contact suit votre dossier, même quand le chantier mêle électricité, maçonnerie, plomberie et plâtrerie.</p>
+        </div>
+        <div class="why-item">
+          <h3>Devis gratuit</h3>
+          <p>Étude de votre demande et chiffrage détaillé, sans engagement de votre part.</p>
+        </div>
+        <div class="why-item">
+          <h3>Intervention rapide</h3>
+          <p>Notre équipe se déplace sur Montpellier et les communes de son agglomération.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>En cas d'urgence</h2>
+      <p class="sub">Une coupure d'électricité ou une fuite d'eau ? Voici les bons réflexes avant notre arrivée.</p>
+      <div class="steps">
+        <div class="step"><span class="step-num"></span><p>Coupez l'alimentation générale concernée (disjoncteur électrique ou arrivée d'eau) si la situation le permet en sécurité.</p></div>
+        <div class="step"><span class="step-num"></span><p>Vérifiez si le problème touche uniquement votre logement ou l'ensemble de l'immeuble.</p></div>
+        <div class="step"><span class="step-num"></span><p>Débranchez l'appareil en cause si vous l'avez identifié.</p></div>
+        <div class="step"><span class="step-num"></span><p>Appelez-nous au 06 09 69 79 00 : un technicien vous conseille et intervient rapidement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="zone">
+    <div class="wrap">
+      <h2>Zone d'intervention</h2>
+      <p class="sub">Basés à Montpellier, nous intervenons dans toute l'agglomération.</p>
+      <div class="zone-list">
+        <span class="zone-tag main">Montpellier</span>
+        <span class="zone-tag">Lattes</span>
+        <span class="zone-tag">Pérols</span>
+        <span class="zone-tag">Castelnau-le-Lez</span>
+        <span class="zone-tag">Saint-Jean-de-Védas</span>
+        <span class="zone-tag">Juvignac</span>
+        <span class="zone-tag">Grabels</span>
+        <span class="zone-tag">Clapiers</span>
+        <span class="zone-tag">Le Crès</span>
+        <span class="zone-tag">Vendargues</span>
+        <span class="zone-tag">Baillargues</span>
+        <span class="zone-tag">Fabrègues</span>
+        <span class="zone-tag">Pignan</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact-band" id="contact">
+  <div class="wrap">
+    <h2>Un projet, une urgence ?</h2>
+    <p>Contactez T.LEC PRO pour un devis gratuit ou une intervention sur Montpellier et son agglomération.</p>
+    <a class="phoneline" href="tel:0609697900">06 09 69 79 00</a>
+    <div style="margin-top:10px; color:rgba(255,255,255,0.78);">kibir3@gmail.com</div>
+    <div><a class="btn-primary" href="tel:0609697900">Appeler maintenant</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Nous écrire</h2>
+    <p class="sub">Un formulaire pour vos demandes de devis, un autre pour rejoindre notre réseau de sous-traitants. Les deux ouvrent votre messagerie, prête à envoyer, à l'adresse kibir3@gmail.com.</p>
+
+    <div class="forms-grid">
+      <div class="form-col" id="devis">
+        <h3>Demande de devis</h3>
+        <p class="form-note">Client particulier ou professionnel.</p>
+        <form id="form-client">
+          <div class="field-row">
+            <div class="field"><label for="c-nom">Nom</label><input id="c-nom" required></div>
+            <div class="field"><label for="c-tel">Téléphone</label><input id="c-tel" type="tel" required></div>
+          </div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" required></div>
+          <div class="field">
+            <label for="c-metier">Type de travaux</label>
+            <select id="c-metier">
+              <option>Électricité</option>
+              <option>Maçonnerie</option>
+              <option>Plomberie</option>
+              <option>Plâtrerie</option>
+              <option>Rénovation complète</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-msg">Votre demande</label><textarea id="c-msg" required></textarea></div>
+          <button class="form-submit" type="submit">Envoyer la demande</button>
+          <div class="form-status" data-status></div>
+        </form>
+      </div>
+
+      <div class="form-col" id="sous-traitance">
+        <h3>Devenir sous-traitant</h3>
+        <p class="form-note">Artisans et entreprises du bâtiment.</p>
+        <form id="form-sous">
+          <div class="field-row">
+            <div class="field"><label for="s-entreprise">Entreprise</label><input id="s-entreprise" required></div>
+            <div class="field"><label for="s-contact">Contact</label><input id="s-contact" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="s-tel">Téléphone</label><input id="s-tel" type="tel" required></div>
+            <div class="field"><label for="s-email">Email</label><input id="s-email" type="email" required></div>
+          </div>
+          <div class="field">
+            <label for="s-specialite">Spécialité</label>
+            <select id="s-specialite">
+              <option>Électricité</option>
+              <option>Maçonnerie</option>
+              <option>Plomberie</option>
+              <option>Plâtrerie</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field"><label for="s-msg">SIRET / présentation</label><textarea id="s-msg" required></textarea></div>
+          <button class="form-submit" type="submit">Envoyer la candidature</button>
+          <div class="form-status" data-status></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      © T.LEC PRO — Maçonnerie, Électricité, Plomberie, Plâtrerie, Rénovation<br>
+      Siège social : 47 rue Vivienne, 75002 Paris — RCS Paris 109 492 512
+    </div>
+    <div>
+      Tél. <a href="tel:0609697900">06 09 69 79 00</a> — <a href="mailto:kibir3@gmail.com">kibir3@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const DEST = "kibir3@gmail.com";
+
+  function wire(formId, subject, fieldsMap){
+    const form = document.getElementById(formId);
+    if(!form) return;
+    const status = form.querySelector('[data-status]');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      try{
+        const lines = fieldsMap.map(function(f){
+          const el = document.getElementById(f.id);
+          return f.label + " : " + (el ? el.value : "");
+        });
+        const body = encodeURIComponent(lines.join("\n"));
+        const mailto = "mailto:" + DEST + "?subject=" + encodeURIComponent(subject) + "&body=" + body;
+        window.location.href = mailto;
+        status.textContent = "Votre messagerie va s'ouvrir pour envoyer votre message à " + DEST + ".";
+      }catch(err){
+        status.textContent = "Une erreur est survenue. Vous pouvez nous écrire directement à " + DEST + ".";
+      }
+    });
+  }
+
+  wire('form-client', 'Demande de devis - site T.LEC PRO', [
+    {id:'c-nom', label:'Nom'},
+    {id:'c-tel', label:'Téléphone'},
+    {id:'c-email', label:'Email'},
+    {id:'c-metier', label:'Type de travaux'},
+    {id:'c-msg', label:'Demande'}
+  ]);
+
+  wire('form-sous', 'Candidature sous-traitant - site T.LEC PRO', [
+    {id:'s-entreprise', label:'Entreprise'},
+    {id:'s-contact', label:'Contact'},
+    {id:'s-tel', label:'Téléphone'},
+    {id:'s-email', label:'Email'},
+    {id:'s-specialite', label:'Spécialité'},
+    {id:'s-msg', label:'SIRET / présentation'}
+  ]);
+})();
+</script>
+
+</body>
+</html>
